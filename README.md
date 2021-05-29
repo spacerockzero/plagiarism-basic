@@ -1,4 +1,8 @@
 # Basic Plagiarism Detection
+
+## 0. Fork changes
+I removed the cli interface, so I could use it with a Rust interface from other Rust orchestration code that I use.
+
 ## 1. Motivation
 Online plagiarism detection tools usually come with a few constraints. It could be a paid-only service, the number of characters to check could be artificially limited, etc. This tool aims to fill a gap where:
 - Plagiarism cases are usually simple copy-paste jobs of a few text phrases with minor edits,
@@ -9,22 +13,24 @@ Online plagiarism detection tools usually come with a few constraints. It could 
 ## 2. Table of Contents
 <!-- TOC depthFrom:2 -->
 
-- [1. Motivation](#1-motivation)
-- [2. Table of Contents](#2-table-of-contents)
-- [3. Philosophy](#3-philosophy)
-- [4. Definitions](#4-definitions)
-- [5. Project Objectives](#5-project-objectives)
+- [Basic Plagiarism Detection](#basic-plagiarism-detection)
+  - [0. Fork changes](#0-fork-changes)
+  - [1. Motivation](#1-motivation)
+  - [2. Table of Contents](#2-table-of-contents)
+  - [3. Philosophy](#3-philosophy)
+  - [4. Definitions](#4-definitions)
+  - [5. Project Objectives](#5-project-objectives)
     - [5.1. Hard Objectives](#51-hard-objectives)
     - [5.2. Soft (Optimization) Objectives](#52-soft-optimization-objectives)
     - [5.3. Anti-Objectives](#53-anti-objectives)
-- [6. Project Status](#6-project-status)
-- [7. Installation Options](#7-installation-options)
+  - [6. Project Status](#6-project-status)
+  - [7. Installation Options](#7-installation-options)
     - [7.1. Binary Release](#71-binary-release)
     - [7.2. Cargo Install](#72-cargo-install)
     - [7.3. Building from source](#73-building-from-source)
-- [8. Usage](#8-usage)
-- [9. Example output](#9-example-output)
-- [10. Technical Details](#10-technical-details)
+  - [8. Usage](#8-usage)
+  - [9. Example output](#9-example-output)
+  - [10. Technical Details](#10-technical-details)
     - [10.1. Defining Plagiarism](#101-defining-plagiarism)
     - [10.2. Choosing n, s and M](#102-choosing-n-s-and-m)
 
