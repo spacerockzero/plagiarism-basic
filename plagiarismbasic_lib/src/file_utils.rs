@@ -28,6 +28,16 @@ pub fn get_file_contents_from_dir(dir: &str) -> Vec<(String, String)> {
     file_id_contents
 }
 
+/// Returns a vector of tuples of (file name, file contents as string)
+///     for each file in the directory.
+///     Panics on error if it's a filename error
+///     Silently replaces file contents by error string otherwise.
+pub fn get_file_contents_from_text(text: &str) -> Vec<(String, String)> {
+    let mut file_id_contents: Vec<(String, String)> = Vec::new();
+    file_id_contents.push(("untrusted".to_string(), text.to_string()));
+    file_id_contents
+}
+
 /// Returns a list of paths to files (not subdirectories) that are in a directory
 fn get_file_paths_from_dir(dir: &str) -> Vec<PathBuf> {
     let mut paths: Vec<PathBuf> = Vec::new();

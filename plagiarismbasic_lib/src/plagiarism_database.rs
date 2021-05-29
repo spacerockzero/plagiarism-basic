@@ -141,20 +141,20 @@ impl PlagiarismDatabase {
         );
     }
 
-    /// Check for plagiarism by comparing metric against cutoff
-    ///     for all untrusted textfragments currently in database
-    pub fn check_untrusted_plagiarism(&self) -> Vec<PlagiarismResult> {
-        let mut results: Vec<PlagiarismResult> = Vec::new();
-        // .skip() in second loop to avoid checking same combinations twice
-        for (sourceidx, source) in self.untrusted_texts.values().enumerate() {
-            for against in self.untrusted_texts.values().skip(sourceidx + 1) {
-                if let Some(result) = self.run_metrics(source, against, false) {
-                    results.push(result);
-                }
-            }
-        }
-        results
-    }
+    // /// Check for plagiarism by comparing metric against cutoff
+    // ///     for all untrusted textfragments currently in database
+    // pub fn check_untrusted_plagiarism(&self) -> Vec<PlagiarismResult> {
+    //     let mut results: Vec<PlagiarismResult> = Vec::new();
+    //     // .skip() in second loop to avoid checking same combinations twice
+    //     for (sourceidx, source) in self.untrusted_texts.values().enumerate() {
+    //         for against in self.untrusted_texts.values().skip(sourceidx + 1) {
+    //             if let Some(result) = self.run_metrics(source, against, false) {
+    //                 results.push(result);
+    //             }
+    //         }
+    //     }
+    //     results
+    // }
 
     /// Check for plagiarism by comparing metric against cutoff
     ///     for textfragments in database against trusted fragments
